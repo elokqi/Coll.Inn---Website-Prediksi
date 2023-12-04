@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inside the head section of your HTML file -->
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+    <title>Coll.Inn - Program Prediksi</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('/static/back.jpg');
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            background-color: rgba(49, 99, 216, 0.5); /* Adjust the alpha value for transparency */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-content {
+            text-align: center;
+            color: #fff; /* Text color */
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1; /* Ensure the content appears above the overlay */
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100" style="background-image: url(back.jpg);">
+    <div class="overlay"></div>
+    <div class="center-content">
+        <h1 class="mb-4" style="font-family: fantasy;">Coll.In</h1>
+        <h2>College Interest - Aplikasi Prediksi Minat Siswa Terhadap Kelanjutan Studi ke Perguruan Tinggi Berdasarkan Profil Orang Tua</h2>
+        <a href="index" type="button" class="btn btn-primary">Let's Start</a>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

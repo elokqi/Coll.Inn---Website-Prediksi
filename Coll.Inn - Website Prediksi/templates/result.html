@@ -1,0 +1,84 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+    <title>Coll.Inn - Program Prediksi</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        /* background-image: url('/static/back.jpg'); */
+        background-color: rgba(49, 99, 216, 0.5);
+    }
+
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Set the height to full viewport height */
+    }
+
+    .form-frame {
+        background-color: #ffffff; /* Set your desired frame color */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 70%;
+        width: 50%;
+    }
+</style>
+<body class="mt-2">
+    <div class="container center-container">
+        <div class="form-frame">
+            <!-- Display input values -->
+            <div class="mt-4">
+                <h4 class="">Input Values:</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-group" >
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="padding-left: 0%;">
+                                <b class="col-md-3">Gaji</b>
+                                <span class="col-md-9">{{ request.form['gaji'] }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="padding-left: 0%;">
+                                <b class="col-md-3">Usia</b>
+                                <span class="col-md-9">{{ request.form['usia'] }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="padding-left: 0%;">
+                                <b class="col-md-3">Pendidikan</b>
+                                <span class="col-md-9">{{ 'Ya' if request.form['pendidikan'] == '1' else 'Tidak' }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="mb-4 text-center" style="padding-top: 5%;">Prediction Result</h1>
+
+            <div class="alert {% if prediction == 1 %}alert-success{% else %}alert-danger{% endif %}" role="alert">
+                {% if prediction == 1 %}
+                    Siswa memiliki minat untuk melanjutkan perguruan tinggi.
+                {% else %}
+                    Siswa memiliki minat untuk <b>tidak</b> melanjutkan perguruan tinggi.
+                {% endif %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="/" class="btn btn-primary">Prediksi Ulang</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

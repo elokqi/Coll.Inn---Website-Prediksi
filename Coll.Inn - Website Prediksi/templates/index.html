@@ -1,0 +1,68 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+    <title>Coll.Inn - Program Prediksi</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            /* background-image: url('/static/back.jpg'); */
+            background-color: rgba(49, 99, 216, 0.5);
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the height to full viewport height */
+        }
+
+        .form-frame {
+            background-color: #ffffff; /* Set your desired frame color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 70%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body class="mt-3">
+    <div class="container center-container">
+        <div class="form-frame">
+            <h2 class="mb-4 text-center">Big Data Prediction</h2>
+            <form action="/predict" method="post">
+                <div class="form-group">
+                    <label for="gaji">Gaji:</label>
+                    <input type="text" class="form-control" name="gaji" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="usia">Usia:</label>
+                    <input type="text" class="form-control" name="usia" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pendidikan">Pendidikan terakhir sarjana:</label>
+                    <select class="form-control" name="pendidikan" required>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
